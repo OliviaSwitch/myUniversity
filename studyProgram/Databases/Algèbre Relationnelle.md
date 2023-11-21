@@ -106,7 +106,7 @@ $$
 $$
 
 ```sql
-% 未测试！
+-- 未测试！
 SELECT clientNo, fName, IName FROM Client
 JOIN
 SELECT clientNo, propertyNo, comment FROM Viewing
@@ -160,7 +160,23 @@ $R\bowtie S$
 - La jointure naturelle est une Equijointure de deux relations R et S sur tous les attributs communs x (qui portent le même nom). Une occurrence de chaque attribut commun est éliminée du résultat
 - 自然连接是两个关系 R 和 S 在所有公共属性 x（具有相同名称）上的等连接。从结果中消除每个公共属性的一次出现。
 
-### Jointure extérieure (outer join)
+![内连接韦恩图](https://img-blog.csdnimg.cn/8921c676c7ea475d92d72980efa9e183.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVEJEQlRVTw==,size_13,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
+$$
+(\Pi_{clientNo,fName,IName}(Client))\bowtie (\Pi_{clientNo,propertyNo,comment}(Viewing))
+$$
+
+```sql
+SELECT clientNo, fName, IName, propertyNo, comment FROM Client
+-- 两张表中需要查询的数据
+JOIN Viewing 
+ON Client.clientNo = Viewing.clientNo;
+-- 使用INNER JOIN通过数据表1的clientNo值查询出对应在数据表2的关联数据
+```
+
+### Jointure extérieure (outer join)
+外连接
+
+#### Jointure externe gauche
 
 ### Semijointure
