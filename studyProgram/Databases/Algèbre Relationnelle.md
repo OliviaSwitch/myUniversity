@@ -74,9 +74,27 @@ $R\times S=\{r \cup s|r\in R, s\in S\}$
 - Si une relation a I tuples et N attributs et l’autre relation a J tuples et M attributs, la relation produit cartésienne contiendra (I*J) tuples avec (N+M) attributs.
 - Il est possible que les deux relations aient des attributs portant le même nom. Dans ce cas, les noms d'attribut sont préfixés par le nom de la relation afin de conserver l'unicité des noms d'attribut au sein d'une relation.
 
-> [!example] $s=\begin{table}
+![$A=\{x,y,z\}$的笛卡尔积](https://upload.wikimedia.org/wikipedia/commons/4/4e/Cartesian_Product_qtl1.svg)
 
-\end{table}$
+> [!example] s:
+> 
+> | A | B |
+> |----|----|
+> | 8 | 1 |
+> | 2 | 3 |
+> 
+> $s\times s=$
+> 
+> | A | B | A | B |
+> |----|----|----|----|
+> | 8 | 1 | 8 | 1 |
+> | 8 | 1 | 2 | 3 |
+> | 2 | 3 | 8 | 1 |
+> | 2 | 3 | 2 | 3 |
+
+
+
+
 
 # Autres operations
 
