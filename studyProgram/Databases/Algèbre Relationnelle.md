@@ -44,7 +44,18 @@ SELECT city FROM PropertyForRent;
 ```
 
 ## différence
-$R-S=\{x\in R|x\\notin$
+$R-S=\{x\in R|x\notin S$
+
+- définit une relation qui comporte les tuples qui existent dans la relation R et non dans la relation S. R et S doivent être compatibles envers l’union.
+- 定义了一种关系，它包含存在于关系 R 中而不存在于关系 S 中的元组。R 和 S 在并集方面必须是兼容的。
+
+$$
+\Pi_{city}(Branch)-\Pi_{city}(PropertyForRent)
+$$
+
+```sql
+
+```
 
 ## produit cartésien
 $R\times S=\{r \cup s|r\in R, s\in S\}$
