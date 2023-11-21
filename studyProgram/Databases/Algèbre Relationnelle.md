@@ -92,21 +92,30 @@ $R\times S=\{r \cup s|r\in R, s\in S\}$
 > | 2 | 3 | 8 | 1 |
 > | 2 | 3 | 2 | 3 |
 
+笛卡尔积在SQL中的写法为：
+```sql
+SELECT * FROM table1 CROSS JOIN table2;
+
+SELECT * FROM table1 JOIN table2;
+
+SELECT * FROM table1 , table2;
+```
+
 $$
 \sigma_{Client.clientNo=Viewing.clientNo}((\Pi_{clientNo,fName,IName}(Client))\times(\Pi_{clientNo,propertyNo,comment}(Viewing)))
 $$
 
 ```sql
-SELECT Client.clientNo, fName, IName, propertyNo, comment
-FROM Client, Viewing
-WHERE Client.clientNo = Viewing.clientNo;
+% 未测试！
+SELECT clientNo, fName, IName FROM Client
+JOIN
+SELECT clientNo, propertyNo, comment FROM Viewing
+WHERE Client.clientNo = Viewing.clentNo;
 ```
 
 BUT, le Produit Cartésien et Selection peuvent être réduits à une seule opération appelle une Jointure.
 
 # Autres operations
-
-## jointure
 
 ## intersection
 $R\cap S=R-(R-S)$
@@ -127,3 +136,7 @@ SELECT city FROM PropertyForRent;
 
 ## division
 
+## jointure
+
+### Jointure thêta
+$R \bowtie_{p} S$
