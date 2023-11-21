@@ -43,6 +43,14 @@ UNION
 SELECT city FROM PropertyForRent;
 ```
 
+需要注意的是，在关系代数中 Project$\Pi$ 显示的是不能重复的元组，因此$\Pi_{city}(Branch)\cup\Pi_{city}(PropertyForRent)$与`UNION`操作互通，但是在实际应用中，我们需要显示重复的集合，因此可以使用下面的SQL语句
+
+```sql
+SELECT city FROM Branch
+UNION ALL
+SELECT city FROM PropertyForRent;
+```
+
 ## différence
 $R-S=\{x\in R|x\notin S$
 
@@ -54,18 +62,26 @@ $$
 $$
 
 ```sql
-
+SELECT city FROM Branch
+EXCEPT
+SELECT city FROM PropertyForRent;
 ```
 
 ## produit cartésien
 $R\times S=\{r \cup s|r\in R, s\in S\}$
+
+
 
 # Autres operations
 
 ## jointure
 
 ## intersection
-$\cap$
+$R\cap S=R-(R-S)$
+
+- Définit une relation constituée de l’ensemble de tous les tuples présents à la fois dans R et dans S. R et S doivent être compatibles envers l’Union
+
+因为交集可以用差集来定义，交集所涉及的两个关系也必须是并集相容的，所以并不在基本运算中。
 
 ## division
 
