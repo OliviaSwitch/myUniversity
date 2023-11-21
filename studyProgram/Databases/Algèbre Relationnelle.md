@@ -43,10 +43,10 @@ UNION
 SELECT city FROM PropertyForRent;
 ```
 
+## différence
+$$
 ## produit cartésien
 $R\times S=\{r \cup s|r\in R, s\in S\}$
-
-## différence
 
 # Autres operations
 
