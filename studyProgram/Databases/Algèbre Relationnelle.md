@@ -160,7 +160,7 @@ $R\bowtie S$
 - La jointure naturelle est une Equijointure de deux relations R et S sur tous les attributs communs x (qui portent le même nom). Une occurrence de chaque attribut commun est éliminée du résultat
 - 自然连接是两个关系 R 和 S 在所有公共属性 x（具有相同名称）上的等连接。从结果中消除每个公共属性的一次出现。
 
-![内连接韦恩图](https://img-blog.csdnimg.cn/8921c676c7ea475d92d72980efa9e183.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVEJEQlRVTw==,size_13,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![内连接韦恩图](https://img-blog.csdnimg.cn/8921c676c7ea475d92d72980efa9e183.png)
 
 $$
 (\Pi_{clientNo,fName,IName}(Client))\bowtie (\Pi_{clientNo,propertyNo,comment}(Viewing))
@@ -178,5 +178,20 @@ ON Client.clientNo = Viewing.clientNo;
 外连接
 
 #### Jointure externe gauche
+左外连接 $⟕$ （latex中找不到这个符号）
+
+- est une jointure dans laquelle les tuples de la relation R qui n’ont pas nécessairement de valeur correspondante dans S parmi les attributs communs de R et S, sont également inclus dans la relation résultante. Les valeurs manquantes dans la seconde relation sont mises à nul
+- 是一种连接关系，在这种连接关系中，关系 R 中的元组如果在 R 和 S 的共同属性中不一定有对应的 S 值，也会被包含在生成的关系中。第二个关系中的缺失值将设为零。
+
+![左外连接韦恩图](https://img-blog.csdnimg.cn/ad5d04c9b7ec430ba153f82a05adf20e.png)
+
+$$
+\Pi_{propertyNo,street,city}(PropertyForRents)⟕Viewing
+$$
+```sql
+SELECT PropertyForRents.propertyNo, street, city, comment
+FROM PropertyForRents
+LEFT JOIN Viewing ON PropertyForRents.propertyNo = Viewing.propertyNo;
+```
 
 ### Semijointure
