@@ -138,5 +138,29 @@ SELECT city FROM PropertyForRent;
 
 ## jointure
 
-### Jointure thêta
+### Jointure thêta($\theta$ join)
 $R \bowtie_{p} S$
+
+- Définit une relation qui contient des tuples satisfaisant le prédicat F du produit Cartesian de R et S
+- Le prédicat F est de la forme $R.a_i \theta S.b_i$ où $\theta$ peut-être un opérateur de comparaison ($<, \le, >, \ge, =, \ne$)
+- Si le prédicat F est l’égalité (=), on parle d’Equijointure
+
+笨方法就是先将两张表使用笛卡尔积连接，再选出符合要求的记录。
+
+- Peut réécrire la jointure Thêta à l'aide des opérations de base de sélection et de produit cartésien
+- 可以使用基本的选择和笛卡尔积操作重写
+
+$$
+R\bowtie_{F}S=\sigma_{F}(R\times S)
+$$
+
+### Jointure Naturelle(Equi-jointure)
+$R\bowtie S$
+
+- La jointure naturelle est une Equijointure de deux relations R et S sur tous les attributs communs x (qui portent le même nom). Une occurrence de chaque attribut commun est éliminée du résultat
+- 自然连接是两个关系 R 和 S 在所有公共属性 x（具有相同名称）上的等连接。从结果中消除每个公共属性的一次出现。
+
+### Jointure extérieure (outer join)
+
+
+### Semijointure
