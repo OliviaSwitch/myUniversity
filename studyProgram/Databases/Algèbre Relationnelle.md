@@ -149,7 +149,7 @@ $$
 \end{align}
 $$
 $$
-\Pi_{clientNo,propertyNo}(Viewing)
+\Pi_{clientNo,propertyNo}(Viewing)\div(\Pi_{propertyNo}(\sigma_{room=3}(PropertyForRent)))
 $$
 
 ## jointure
@@ -203,11 +203,11 @@ ON Client.clientNo = Viewing.clientNo;
 ![左外连接韦恩图](https://img-blog.csdnimg.cn/ad5d04c9b7ec430ba153f82a05adf20e.png)
 
 $$
-\Pi_{propertyNo,street,city}(PropertyForRents)⟕Viewing
+\Pi_{propertyNo,street,city}(PropertyForRent)⟕Viewing
 $$
 ```sql
 -- 未验证，很可能是错的 TODO
-SELECT PropertyForRents.propertyNo, street, city, comment
+SELECT PropertyForRent.propertyNo, street, city, comment
 FROM PropertyForRents
-LEFT JOIN Viewing ON PropertyForRents.propertyNo = Viewing.propertyNo;
+LEFT JOIN Viewing ON PropertyForRent.propertyNo = Viewing.propertyNo;
 ```
