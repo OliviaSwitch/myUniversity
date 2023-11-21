@@ -70,7 +70,13 @@ SELECT city FROM PropertyForRent;
 ## produit cartésien
 $R\times S=\{r \cup s|r\in R, s\in S\}$
 
+- Définit une relation qui est la concaténation de chaque tuple de relation R avec chaque tuple de relation S.
+- Si une relation a I tuples et N attributs et l’autre relation a J tuples et M attributs, la relation produit cartésienne contiendra (I*J) tuples avec (N+M) attributs.
+- Il est possible que les deux relations aient des attributs portant le même nom. Dans ce cas, les noms d'attribut sont préfixés par le nom de la relation afin de conserver l'unicité des noms d'attribut au sein d'une relation.
 
+> [!example] $s=\begin{table}
+
+\end{table}$
 
 # Autres operations
 
@@ -79,9 +85,19 @@ $R\times S=\{r \cup s|r\in R, s\in S\}$
 ## intersection
 $R\cap S=R-(R-S)$
 
-- Définit une relation constituée de l’ensemble de tous les tuples présents à la fois dans R et dans S. R et S doivent être compatibles envers l’Union
+- Définit une relation constituée de l’ensemble de tous les tuples présents à la fois dans R et dans S. R et S doivent être compatibles envers l’Union.
+- 定义一个关系，由 R 和 S 中都存在的所有元组的集合组成。R 和 S 必须与 Union 兼容。
 
 因为交集可以用差集来定义，交集所涉及的两个关系也必须是并集相容的，所以并不在基本运算中。
+
+$$
+\Pi_{city}(Branch)\cap\Pi_{city}(PropertyForRent)
+$$
+```sql
+SELECT city FROM Branch
+INTERSECT
+SELECT city FROM PropertyForRent;
+```
 
 ## division
 
