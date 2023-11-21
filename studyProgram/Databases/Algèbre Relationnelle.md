@@ -135,6 +135,22 @@ SELECT city FROM PropertyForRent;
 ```
 
 ## division
+$R\div S$
+
+- Définit une relation sur les attributs C qui consiste en un ensemble de tuples de R qui correspondent à la combinaison de chaque tuple de S
+- 定义了属性 C 的一个关系，它由一组 R 元组组成，R 元组对应于 S 元组的每个组合
+
+Exprimé en utilisant les operations de base:
+$$
+\begin{align}
+&T_{1}\leftarrow\Pi_{C}(R) \\
+&T_{2}\leftarrow\Pi_{C}((S\times T_{1})-R) \\
+&T\leftarrow T_{1}-T_{2}
+\end{align}
+$$
+$$
+\Pi_{clientNo,propertyNo}(Viewing)
+$$
 
 ## jointure
 
@@ -174,9 +190,10 @@ ON Client.clientNo = Viewing.clientNo;
 -- 使用INNER JOIN通过数据表1的clientNo值查询出对应在数据表2的关联数据
 ```
 
+### Semijointure
+半连接
 ### Jointure extérieure (outer join)
 外连接
-
 #### Jointure externe gauche
 左外连接 $⟕$ （latex中找不到这个符号）
 
@@ -189,9 +206,8 @@ $$
 \Pi_{propertyNo,street,city}(PropertyForRents)⟕Viewing
 $$
 ```sql
+-- 未验证，很可能是错的 TODO
 SELECT PropertyForRents.propertyNo, street, city, comment
 FROM PropertyForRents
 LEFT JOIN Viewing ON PropertyForRents.propertyNo = Viewing.propertyNo;
 ```
-
-### Semijointure
