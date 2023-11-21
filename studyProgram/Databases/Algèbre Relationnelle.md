@@ -44,7 +44,8 @@ SELECT city FROM PropertyForRent;
 ```
 
 ## différence
-$$
+$R-S=\{x\in R|x\\notin$
+
 ## produit cartésien
 $R\times S=\{r \cup s|r\in R, s\in S\}$
 
