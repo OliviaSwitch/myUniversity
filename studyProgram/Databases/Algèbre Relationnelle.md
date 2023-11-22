@@ -11,6 +11,7 @@
 $$
 \sigma_{salary>10000}(Staff)
 $$
+
 ```sql
 SELECT * FROM Staff
 WHERE salary>100;
@@ -26,6 +27,7 @@ $\prod_{col1,col2,\cdots,coln}$
 $$
 \Pi_{staffNo,fName,IName,salary}(Staff)
 $$
+
 ```sql
 SELECT DISTINCT staffNo, fName, IName, salary FROM Staff;
 ```
@@ -37,6 +39,7 @@ $R \cup S$
 $$
 \Pi_{city}(Branch)\cup\Pi_{city}(PropertyForRent)
 $$
+
 ```sql
 SELECT city FROM Branch
 UNION
@@ -128,6 +131,7 @@ $R\cap S=R-(R-S)$
 $$
 \Pi_{city}(Branch)\cap\Pi_{city}(PropertyForRent)
 $$
+
 ```sql
 SELECT city FROM Branch
 INTERSECT
@@ -205,6 +209,7 @@ ON Client.clientNo = Viewing.clientNo;
 $$
 \Pi_{propertyNo,street,city}(PropertyForRent)⟕Viewing
 $$
+
 ```sql
 -- 未验证，很可能是错的 TODO
 SELECT PropertyForRent.propertyNo, street, city, comment
