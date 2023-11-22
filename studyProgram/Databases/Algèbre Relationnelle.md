@@ -211,3 +211,4 @@ SELECT PropertyForRent.propertyNo, street, city, comment
 FROM PropertyForRents
 LEFT JOIN Viewing ON PropertyForRent.propertyNo = Viewing.propertyNo;
 ```
+
