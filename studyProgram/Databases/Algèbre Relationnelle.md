@@ -212,3 +212,4 @@ FROM PropertyForRents
 LEFT JOIN Viewing ON PropertyForRent.propertyNo = Viewing.propertyNo;
 ```
 
+> 练习见TD的pdf
