@@ -30,8 +30,8 @@ ID3算法的主要目标是通过最小化熵（entropy）来选择最佳的分�
 $$Entropy=Info(D)=-\sum_{i=1}^{n}p_i\log_2(p_i)$$
 其中$p_i$为D中一个类$C_i$出现的概率，$p_i=\frac{\left\vert C_i\right\vert}{\left\vert D\right\vert}$
 
-分类D（称为熵）所需的信息量（在使用A将D划分为v个分区后）：
-$$Info_A(D)\sum_{j=1}^{v}\frac{\left\vert D_j\right\vert}{\left\vert D\right\vert}\times Info(D_j)$$
+分类$D$（称为熵）所需的信息量（在使用A将D划分为v个分区后）：
+$$Info_A(D)=\sum_{j=1}^{v}\frac{\left\vert D_j\right\vert}{\left\vert D\right\vert}\times Info(D_j)$$
 
 通过连接属性A获取的信息增益
 $$Gain(A)=Info(D)-Info_A(D)$$
